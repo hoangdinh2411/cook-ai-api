@@ -34,13 +34,5 @@ services:
       name: cook-ai-redis
       region: frankfurt
       plan: free
-      # REQUIRED: choose one of the following policies
-      # 1) Internal-only (recommended): empty list allows connections from your Render services only
       ipAllowList: []
-      # 2) OR allow from specific CIDRs (example):
-      # ipAllowList:
-      #   - cidrBlock: 203.0.113.7/32
-      #     description: my office IP
-      #   - cidrBlock: 0.0.0.0/0
-      #     description: (NOT recommended) allow all
-      maxmemoryPolicy: noeviction
+      maxmemoryPolicy: noevictio
