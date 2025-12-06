@@ -20,7 +20,6 @@ services:
             value: '86400'
           - key: MAX_IMAGE_BYTES
             value: '3000000'
-            value: '8000'
           - key: API_URL
             value: 'https://fastapi-recipes.onrender.com'
           # Link Redis URL from the Redis service below (remove the manual REDIS_URL above)
