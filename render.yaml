@@ -34,4 +34,4 @@ services:
       region: frankfurt
       plan: free
       ipAllowList: []
-      maxmemoryPolicy: noevictio
+      maxmemoryPolicy: noeviction
