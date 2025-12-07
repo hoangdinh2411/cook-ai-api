@@ -1,13 +1,11 @@
-import { Controller, Get, UseInterceptors } from '@nestjs/common';
-import { FileInterceptor } from '@nestjs/platform-express';
+import { Controller, Get } from '@nestjs/common';
 
-@Controller('ingredients')
+@Controller('health')
 export class HealthController {
     constructor() {}
 
-    @UseInterceptors(FileInterceptor('file'))
     @Get('/')
-    async vision() {
+    async health() {
         return 'ok';
     }
 }
