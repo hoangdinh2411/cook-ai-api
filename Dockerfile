@@ -1,19 +1,20 @@
-# Stage 1: Build
-FROM node:18 AS builder
-WORKDIR /app
+# Use Node.js version 20 as the base image
+FROM node:20
+
+# Set the working directory in the container
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json
 COPY package*.json ./
-RUN npm ci
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application code
 COPY . .
+
+# Build the application
 RUN npm run build
 
-# Stage 2: Run
-FROM node:18-alpine AS runner
-WORKDIR /app
-RUN apk add --no-cache python3 make g++
-COPY package*.json ./
-RUN npm ci --omit=dev
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/node_modules ./node_modules
-
-EXPOSE 3000
+# Run the application
 CMD ["node", "dist/main.js"]
