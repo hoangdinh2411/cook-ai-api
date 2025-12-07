@@ -21,7 +21,7 @@ services:
           - key: MAX_IMAGE_BYTES
             value: '3000000'
           - key: API_URL
-            value: 'https://fastapi-recipes.onrender.com'
+            value: 'https://cook-ai-api.onrender.com'
           # Link Redis URL from the Redis service below (remove the manual REDIS_URL above)
           - key: REDIS_URL
             fromService:
